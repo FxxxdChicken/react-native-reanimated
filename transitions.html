@@ -6,9 +6,11 @@
           </a>
         Transitions</h1>
 <hr />
-<p>Transitions is an experimental API distributed as a part of reanimated which serves the purpose of animating between two states of view hierarchy. It is conceptually similar to <code>LayoutAnimation</code> concept from react native but gives much better control of what and how is going to be animated.</p>
-<p>Transitions API consists of two main building blocks. First one being <code>Transitioning.View</code> which is an extension of regular react-native view, so you can use any <code>View</code> props you'd like. The <code>Transitioning.View</code> is a root of all the transition animations that will be happening and is used to scope the changes to its children. In order to have next transition animated you'd need to call <code>animateNextTransition()</code> on the <code>Transitioning.View</code> instance.</p>
-<p>The second main building block is transition definition. Transitioning API uses JSX syntax that allows you to define how the transition animation should perform. You can use all the components from <code>Transition</code> object to combine the animation you want. Please see the below list for the documentation of transition components.</p>
+<p>Transitions은 실험적인 API이다. 화면 계층에서 2개의 상태 사이에의 애니메이션을 다루기 위해서 구현되어 있다.
+이것은 react native에 있는 <code>LayoutAnimation</code>하고 개념으로 비슷하다. 그러나 animation을 더 잘 컨트롤할 수 있게 해준다.</p>
+<p>Transitions는 2개의 메인 block을 구성 되어 있습니다. 첫 번째로 <code>Transitioning.View</code> 는 react-native view의 확장된 것이다. 그래서 <code>View props를  사용할 수 있다.</code>Transitioning.View<code>는 모든 애니메이션의 root로써, children의 변화 범위를 넓히는데 사용된다. next transition을 활성화 하기 위해서는</code>Transitioning.View<code>에 있는</code>animateNextTransition()` 를 호출하면 된다.</p>
+<p>두 번쨰 메인 block은 transition을 정의하는 것이다. Transitioning API는 transition animation 어떻게 사용할지를 JSX 구문을 사용해서 정의한다.
+ 모든 컴포넌트에 <code>Transition</code> 를 결합하여 애니메이션을 구현할 수 있다. transition 컴포넌트에 대한 설명은 아래 목록을 참조.</p>
 <h2 id="transition-groups">
           <a class="anchor" href="#transition-groups">
             <svg width="16" height="16">
@@ -16,7 +18,7 @@
             </svg>
           </a>
         Transition groups</h2>
-<p>The below set of components can be used to group one or more transitions. You can also nest transition groups in order to achieve desirable effects.</p>
+<p>아래의 컴포넌트의 set을 이용하여 transitions을 하나이상의 그룹으로 사용할수 있다. 또한 더 나은 효과를 위해서 transition 그룹을 중첩할 수도 있다.</p>
 <h3 id="transitiontogether">
           <a class="anchor" href="#-lt-transition-together-gt-">
             <svg width="16" height="16">
@@ -24,7 +26,7 @@
             </svg>
           </a>
         <code>&lt;Transition.Together&gt;</code></h3>
-<p>Transitions nested under this component will run in parallel when the animation starts.</p>
+<p>이 구성 요소 아래에 중첩된 Transitions은 애니메이션 시작될 떄, 병렬(parallel)로 처리 된다.</p>
 <h3 id="transitionsequence">
           <a class="anchor" href="#-lt-transition-sequence-gt-">
             <svg width="16" height="16">
@@ -32,7 +34,7 @@
             </svg>
           </a>
         <code>&lt;Transition.Sequence&gt;</code></h3>
-<p>Transitions nested under this component will run in sequence in the order at which they are listed</p>
+<p>이 구성 요소 아래에 중첩된 Transitions은 애니메이션 시작될 떄, 순차적(sequence)로 처리 된다.</p>
 <h2 id="transitions-1">
           <a class="anchor" href="#transitions">
             <svg width="16" height="16">
@@ -40,15 +42,17 @@
             </svg>
           </a>
         Transitions</h2>
-<p>Transition components can be used separately or as a part of a group. Each transition component has the following common properties you can use to configure the animation:</p>
+<p>Transition components들은 별도로 또는 그룹의 일부로 사용할 수 있다. 각 transition component는 애니메이션을 구성하는데 다음과 같은 공통 속성이 있습니다.</p>
 <h4 id="durationms"><code>durationMs</code></h4>
-<p>The time animation takes to execute in milliseconds</p>
+<p>애니메이션 실행시간(milliseconds)</p>
 <h4 id="delayms"><code>delayMs</code></h4>
-<p>Use this if you want the animation to start delayed (value in milliseconds)</p>
+<p>애니메이션을 지연시간( milliseconds )</p>
 <h4 id="interpolation"><code>interpolation</code></h4>
-<p>Specify the transition timing curve. Possible values are: <code>linear</code>, <code>easeIn</code>, <code>easeOut</code>, <code>easeInOut</code></p>
+<p>transition timing 설정. <code>linear</code>, <code>easeIn</code>, <code>easeOut</code>, <code>easeInOut</code> 옵션만 가능하다.</p>
 <h4 id="propagation"><code>propagation</code></h4>
-<p>Allows for the framework to automatically delay beginning of transitions across a set of different views depending on their position. The possible values are <code>top</code>, <code>bottom</code>, <code>left</code> and <code>right</code>. When <code>propagation="top"</code> it means that the first element that will start animating is the one that is closest to the top of <code>Transitioning.View</code> container, then the other views will be delayed by the amount which depends on their distance from the top edge.</p>
+<p>프레임워크가 위치에 따라, set of different views에서 transitions을 자동으로 지연시킬 수 있다. 가능한 값은 <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> 이다.
+<code>propagation="top"</code> 일 때, 이것의 의미는 animation을 시작할 첫번쨰 element가 <code>Transitioning.View</code> 컨테이너의 top에 가장 가까운 요소라는 뜻이다.
+다른 view들은 top 가장자리 거리에 양에 따라 지연될 것이다.</p>
 <h3 id="transitionin">
           <a class="anchor" href="#-lt-transition-in-gt-">
             <svg width="16" height="16">
