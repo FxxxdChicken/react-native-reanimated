@@ -6,11 +6,12 @@
           </a>
         Clocks</h1>
 <hr />
-<p>Original <code>Animated</code> API makes an "animation" object a first class citizen.
-<code>Animation</code> object has many features and therefore requires quite a few JS&lt;&gt;Native bridge methods to be managed properly.
-In <code>react-native-reanimated</code>, clocks aim to replace that by providing more of a low level abstraction but also since clock nodes behave much like the animated values they make the implementation much less complex.</p>
-<p><code>Animated.Clock</code> node is a special type of <code>Animated.Value</code> that can be updated in each frame to the timestamp of the current frame. When we take <code>Clock</code> node as an input, the value it returns is the current frame timestamp in milliseconds. Using special methods, clock nodes can be stopped and started and we can also test if clock has been started.</p>
-<p>Because <code>Animated.Clock</code> just extends the <code>Animated.Value</code> you can use it in the same places (operations) where you can pass any type of animated node.</p>
+<p>오리지널 <code>Animated</code> API는 "animation" 객체를 first class citizen로 만든다.
+<code>Animation</code> 객체는 많은 특징을 가지고 있다. 그래서 JS&lt;&gt;Native 브릿지를 적절하게 관리행줘야한다.
+<code>react-native-reanimated</code> 에서는, clocks 중점으로 더 낮은 레벨의 추상화를 한다. 또한, animbation value와 매우 비슷하게 동작하기에 구현이 훨씬 덜 복잡해진다.</p>
+<p><code>Animated.Clock</code> 노드는  <code>Animated.Value</code>의 특수한 type이다. 각 frame에서 현재 frame의 timestamp를 업데이트 할수 있다.
+<code>Clock</code> 노드를 입력할때, 반환되는 값은 밀리초(milliseconds) 단위의 현재 프레임 타임스탬프 이다. 특벼한 방법으로 clock을 중지 할 수 있으며, 시작됬는지 테스트 할수도 있다.</p>
+<p>왜냐하면 <code>Animated.Clock</code> 은 그저 <code>Animated.Value</code> 의 확장이다. animation node를 사용하는 위치(operations)에서도 사용할 수 있다.</p>
 </div></div></main></div></div>
     <script>
       window.__INITIAL_PATH__ = 'clock-and-the-algorithm';
